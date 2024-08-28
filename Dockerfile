@@ -1,11 +1,11 @@
 # Base R Shiny image
-FROM rocker/shiny
+FROM rocker/shiny 
 
 # Make a directory in the container
 RUN mkdir /home/shiny-app
 
 # Install R dependencies
-RUN R -e "install.packages(c('dplyr', 'ggplot2', 'gapminder'))"
+RUN R -e "install.packages(c('shiny', 'shinydashboard', 'bslib','ggplot2','RODBC','dplyr','data.table'))"
 
 # Copy the Shiny app code
 COPY app.R /home/shiny-app/app.R
